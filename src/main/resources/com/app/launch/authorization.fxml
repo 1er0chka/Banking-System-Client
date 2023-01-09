@@ -1,0 +1,81 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.launch.AuthorizationController"
+      stylesheets="/styles/launchStyle.css" styleClass="v-box">
+    <HBox alignment="CENTER" prefHeight="400">
+        <Label text="Universal" styleClass="label-title-1">
+            <HBox.margin>
+                <Insets top="200"/>
+            </HBox.margin>
+        </Label>
+        <Label text="BANK" styleClass="label-title-1" style="-fx-text-fill: #5c30cc">
+            <HBox.margin>
+                <Insets top="200"/>
+            </HBox.margin>
+        </Label>
+        <Label text="ing" styleClass="label-title-1">
+            <HBox.margin>
+                <Insets top="200"/>
+            </HBox.margin>
+        </Label>
+    </HBox>
+    <StackPane prefHeight="575">
+        <VBox alignment="TOP_CENTER">
+            <Label text="Вход" styleClass="label-title-2"/>
+            <Pane minHeight="50"/>
+            <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+                <ImageView fx:id="imageUserIcon" fitHeight="30" fitWidth="30">
+                    <HBox.margin>
+                        <Insets left="5" right="5"/>
+                    </HBox.margin>
+                </ImageView>
+                <TextField fx:id="tfUserLogin" promptText="login" prefHeight="30" prefWidth="340"/>
+            </HBox>
+            <Pane minHeight="20"/>
+            <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+                <ImageView fx:id="imageKeyIcon" fitHeight="30" fitWidth="30">
+                    <HBox.margin>
+                        <Insets left="5" right="5"/>
+                    </HBox.margin>
+                </ImageView>
+                <StackPane>
+                    <TextField fx:id="tfUserPassword" promptText="password" prefHeight="30" prefWidth="300" visible="false"/>
+                    <PasswordField fx:id="pfUserPassword" promptText="password" prefHeight="30" prefWidth="300" styleClass="text-field"/>
+                </StackPane>
+                <StackPane>
+                    <Pane prefHeight="30" prefWidth="40" style="-fx-background-color: transparent" onMousePressed="#hidePassword"/>
+                    <ImageView fx:id="imageHidingIcon" fitHeight="30" fitWidth="30" onMousePressed="#hidePassword">
+                        <HBox.margin>
+                            <Insets left="5" right="5"/>
+                        </HBox.margin>
+                    </ImageView>
+                </StackPane>
+            </HBox>
+            <Label fx:id="lblIncorrectLoginPassword" text="Заполните все поля" alignment="BOTTOM_RIGHT" prefWidth="340" style="-fx-text-fill: red" visible="false"/>
+            <Pane minHeight="40"/>
+            <Button text="Войти" textAlignment="CENTER" minHeight="30" prefWidth="380" styleClass="button-login" onAction="#loginCheck"/>
+            <Pane minHeight="10"/>
+            <Label text="или" alignment="CENTER" prefWidth="380"/>
+            <Pane minHeight="10"/>
+            <Button text="Зарегистрироваться" textAlignment="CENTER" minHeight="30" prefWidth="380" styleClass="button-login" onAction="#goToRegistration"/>
+        </VBox>
+    </StackPane>
+    <HBox alignment="BOTTOM_LEFT" maxHeight="105">
+        <StackPane>
+            <Pane prefHeight="70" prefWidth="70" style="-fx-background-color: transparent" onMousePressed="#exit">
+                <StackPane.margin>
+                    <Insets bottom="35" left="35"/>
+                </StackPane.margin>
+            </Pane>
+            <ImageView fx:id="imageExitIcon" fitHeight="70" fitWidth="70" onMousePressed="#exit">
+                <StackPane.margin>
+                    <Insets bottom="35" left="35"/>
+                </StackPane.margin>
+            </ImageView>
+        </StackPane>
+    </HBox>
+</VBox>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.user.IconsController"
+      stylesheets="/styles/popUpWindow.css" styleClass="v-box-background"
+      alignment="CENTER">
+    <Pane minHeight="10"/>
+    <Label text="Выбор аватара" styleClass="label-header"/>
+    <FlowPane fx:id="fpIcons" minWidth="1040" maxWidth="1040"/>
+    <HBox alignment="TOP_CENTER">
+        <Button text="Отмена" prefHeight="40" prefWidth="140" onAction="#cancel">
+            <HBox.margin>
+                <Insets top="20" bottom="15"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+</VBox>

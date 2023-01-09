@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.image.ImageView?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.user.UserInfoController"
+      stylesheets="/styles/popUpWindow.css" styleClass="v-box-background"
+      prefHeight="150.0" prefWidth="400.0" alignment="TOP_CENTER">
+    <ImageView fx:id="imageUser" fitHeight="100" fitWidth="100">
+        <VBox.margin>
+            <Insets top="20" bottom="12"/>
+        </VBox.margin>
+    </ImageView>
+    <Label fx:id="lblSurname" styleClass="label-text"/>
+    <Label fx:id="lblName" styleClass="label-text">
+        <VBox.margin>
+            <Insets bottom="10"/>
+        </VBox.margin>
+    </Label>
+    <Label fx:id="lblRole" styleClass="label-text" style="-fx-font-size: 16"/>
+    <VBox minWidth="300" maxWidth="300">
+        <Label fx:id="lblAccounts" styleClass="label-text">
+            <VBox.margin>
+                <Insets top="30" bottom="5"/>
+            </VBox.margin>
+        </Label>
+        <Label fx:id="lblCards" styleClass="label-text"/>
+        <Label fx:id="lblOperations" styleClass="label-text">
+            <VBox.margin>
+                <Insets top="5" bottom="5"/>
+            </VBox.margin>
+        </Label>
+    </VBox>
+    <HBox alignment="TOP_CENTER">
+        <Button text="Назад" prefHeight="40" prefWidth="140" onAction="#cancel">
+            <HBox.margin>
+                <Insets top="20" bottom="15" left="10"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+</VBox>

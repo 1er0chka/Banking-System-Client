@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.account.CreateAccountController"
+      stylesheets="/styles/popUpWindow.css" styleClass="v-box-background"
+      prefHeight="150.0" prefWidth="400.0" alignment="CENTER">
+    <Pane minHeight="10"/>
+    <Label text="Банковский счет" styleClass="label-header"/>
+    <Pane minHeight="10"/>
+    <HBox alignment="CENTER" maxHeight="30" maxWidth="380" styleClass="h-box">
+        <TextField fx:id="tfName" promptText="Название банковского счета" maxHeight="30" minWidth="380" maxWidth="380"/>
+    </HBox>
+    <Label fx:id="lblIncorrectName" alignment="BOTTOM_RIGHT" prefWidth="340" style="-fx-text-fill: red" visible="false"/>
+    <Pane minHeight="10"/>
+    <HBox alignment="CENTER" maxHeight="30" maxWidth="380" styleClass="h-box">
+        <TextField fx:id="tfNumber" promptText="Номер банковского счета" maxHeight="30" minWidth="380" maxWidth="380"/>
+    </HBox>
+    <Label fx:id="lblIncorrectNumber" alignment="BOTTOM_RIGHT" prefWidth="340" style="-fx-text-fill: red" visible="false"/>
+    <Pane minHeight="10"/>
+    <HBox alignment="CENTER" maxHeight="30" maxWidth="380" styleClass="h-box">
+        <TextField fx:id="tfAmount" promptText="Сумма на счету" maxHeight="30" minWidth="380" maxWidth="380"/>
+    </HBox>
+    <Label fx:id="lblIncorrectAmount" alignment="BOTTOM_RIGHT" prefWidth="340" style="-fx-text-fill: red" visible="false"/>
+    <HBox>
+        <Button text="Отмена" prefHeight="40" prefWidth="140" onAction="#cancel">
+            <HBox.margin>
+                <Insets top="20" bottom="15" left="10"/>
+            </HBox.margin>
+        </Button>
+        <Button text="Создать" prefHeight="40" prefWidth="140" onAction="#create">
+            <HBox.margin>
+                <Insets top="20" bottom="15" left="95"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+</VBox>

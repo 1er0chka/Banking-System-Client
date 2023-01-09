@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.message.MessageController"
+      stylesheets="/styles/messageStyle.css" styleClass="v-box"
+      prefHeight="400.0" prefWidth="600.0">
+    <HBox maxHeight="120" minHeight="120">
+        <Label fx:id="lblTitle" wrapText="true" alignment="CENTER_LEFT" minHeight="120" maxHeight="120" minWidth="430" maxWidth="430" styleClass="label-header">
+            <HBox.margin>
+                <Insets top="25" right="25" left="25"/>
+            </HBox.margin>
+        </Label>
+        <ImageView fx:id="imageIcon" fitHeight="80" fitWidth="80">
+            <HBox.margin>
+                <Insets top="50" right="50" bottom="50"/>
+            </HBox.margin>
+        </ImageView>
+    </HBox>
+    <Label fx:id="lblText" wrapText="true" alignment="CENTER" prefHeight="175">
+        <VBox.margin>
+            <Insets right="25" bottom="25" left="25"/>
+        </VBox.margin>
+    </Label>
+    <HBox prefHeight="105" prefWidth="600">
+        <Button fx:id="btnAnswerLeft" prefHeight="40" prefWidth="140" visible="false" onAction="#returnAnswerLeft">
+            <HBox.margin>
+                <Insets bottom="50" left="50"/>
+            </HBox.margin>
+        </Button>
+        <Button fx:id="btnAnswerRight" prefHeight="40" prefWidth="140" visible="false" onAction="#returnAnswerRight">
+            <HBox.margin>
+                <Insets right="25" bottom="50" left="220"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+</VBox>

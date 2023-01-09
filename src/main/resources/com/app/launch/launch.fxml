@@ -1,0 +1,49 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.launch.LaunchController"
+      stylesheets="/styles/launchStyle.css" styleClass="v-box">
+    <HBox alignment="CENTER" prefHeight="400">
+        <Label text="Universal" styleClass="label-title-1">
+            <HBox.margin>
+                <Insets top="200"/>
+            </HBox.margin>
+        </Label>
+        <Label text="BANK" styleClass="label-title-1" style="-fx-text-fill: #5c30cc">
+            <HBox.margin>
+                <Insets top="200"/>
+            </HBox.margin>
+        </Label>
+        <Label text="ing" styleClass="label-title-1">
+            <HBox.margin>
+                <Insets top="200"/>
+            </HBox.margin>
+        </Label>
+    </HBox>
+    <StackPane prefHeight="575">
+        <HBox alignment="BOTTOM_CENTER">
+            <Button text="Вход" prefHeight="60" prefWidth="300" style="-fx-font-size: 30" onAction="#connect">
+                <HBox.margin>
+                    <Insets bottom="100"/>
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </StackPane>
+    <HBox alignment="BOTTOM_LEFT" maxHeight="105">
+        <StackPane>
+            <Pane prefHeight="70" prefWidth="70" style="-fx-background-color: transparent" onMousePressed="#exit">
+                <StackPane.margin>
+                    <Insets bottom="35" left="35"/>
+                </StackPane.margin>
+            </Pane>
+            <ImageView fx:id="imageExitIcon" fitHeight="70" fitWidth="70" onMousePressed="#exit">
+                <StackPane.margin>
+                    <Insets bottom="35" left="35"/>
+                </StackPane.margin>
+            </ImageView>
+        </StackPane>
+    </HBox>
+</VBox>

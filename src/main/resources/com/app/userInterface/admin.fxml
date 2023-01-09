@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<?import javafx.geometry.Insets?>
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.userInterface.AdminController"
+      stylesheets="/styles/tablesInterfaceStyle.css" styleClass="h-box">
+    <VBox prefWidth="302">
+        <StackPane alignment="TOP_LEFT" maxHeight="200">
+            <Label text="Universal" styleClass="label-title-dark">
+                <StackPane.margin>
+                    <Insets top="20" left="20"/>
+                </StackPane.margin>
+            </Label>
+            <HBox alignment="BOTTOM_LEFT">
+                <Label text="BANK" styleClass="label-title-dark">
+                    <HBox.margin>
+                        <Insets top="70" left="20"/>
+                    </HBox.margin>
+                </Label>
+                <Label text="ing" styleClass="label-title"/>
+            </HBox>
+        </StackPane>
+        <Pane minHeight="50"/>
+        <StackPane alignment="CENTER_LEFT">
+            <ImageView fx:id="imageMenuMain" fitHeight="34" fitWidth="34">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button text="Главная" alignment="CENTER_LEFT" prefHeight="100" prefWidth="302" styleClass="menu-button" onAction="#goToMain">
+            </Button>
+        </StackPane>
+        <StackPane alignment="CENTER_LEFT">
+            <ImageView fx:id="imageMenuTransfers" fitHeight="34" fitWidth="34">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button text="Переводы" alignment="CENTER_LEFT" prefHeight="100" prefWidth="302" styleClass="menu-button" onAction="#goToTransfers"/>
+        </StackPane>
+        <StackPane alignment="CENTER_LEFT">
+            <ImageView fx:id="imageMenuPayments" fitHeight="34" fitWidth="34">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button text="Платежи" alignment="CENTER_LEFT" prefHeight="100" prefWidth="302" styleClass="menu-button" onAction="#goToPayments"/>
+        </StackPane>
+        <StackPane alignment="CENTER_LEFT">
+            <ImageView fx:id="imageMenuHistory" fitHeight="34" fitWidth="34">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button text="История" alignment="CENTER_LEFT" prefHeight="100" prefWidth="302" styleClass="menu-button" onAction="#goToHistory"/>
+        </StackPane>
+        <Pane fx:id="pane" minHeight="320"/>
+        <StackPane fx:id="spAdmin" alignment="CENTER_LEFT">
+            <ImageView fx:id="imageAdminIcon" fitHeight="45" fitWidth="45">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button text="Управление" alignment="CENTER_LEFT" prefHeight="70" prefWidth="302" styleClass="active-menu-button" disable="true"/>
+        </StackPane>
+        <StackPane alignment="CENTER_LEFT">
+            <ImageView fx:id="imageExitIcon" fitHeight="45" fitWidth="45">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button fx:id="btnExit" text="Выход" alignment="CENTER_LEFT" prefHeight="70" prefWidth="302" styleClass="menu-button" onAction="#exit"/>
+        </StackPane>
+    </VBox>
+    <VBox alignment="TOP_RIGHT">
+        <HBox alignment="CENTER_RIGHT" minHeight="100" maxHeight="100" prefWidth="1618">
+            <ImageView fx:id="imageUserIcon" fitHeight="80" fitWidth="80" onMousePressed="#openUserMenu">
+                <HBox.margin>
+                    <Insets top="30" right="20"/>
+                </HBox.margin>
+            </ImageView>
+        </HBox>
+        <HBox minHeight="980" maxHeight="980" minWidth="1580" maxWidth="1580">
+            <VBox alignment="TOP_CENTER" minHeight="880" maxHeight="880" minWidth="1480" maxWidth="1480">
+                <HBox.margin>
+                    <Insets top="20" left="30"/>
+                </HBox.margin>
+                <HBox minHeight="60" maxHeight="60" minWidth="1480" maxWidth="1480">
+                    <VBox.margin>
+                        <Insets top="20" left="100"/>
+                    </VBox.margin>
+                    <HBox alignment="CENTER_LEFT" minHeight="35" maxHeight="35" minWidth="250" maxWidth="250" styleClass="h-box-field">
+                        <TextField fx:id="tfSearch" promptText="Поиск" prefHeight="30" prefWidth="260"/>
+                        <Pane minHeight="25" maxHeight="25" minWidth="25" maxWidth="25" onMousePressed="#search">
+                            <HBox.margin>
+                                <Insets left="5" right="5"/>
+                            </HBox.margin>
+                            <ImageView fx:id="imageSearchIcon" fitHeight="25" fitWidth="25"/>
+                        </Pane>
+                    </HBox>
+                </HBox>
+                <ScrollPane maxHeight="1.7976931348623157E308" prefHeight="780" minWidth="1400" maxWidth="1400" VBox.vgrow="ALWAYS">
+                    <TableView fx:id="tvUsers" minHeight="798" maxHeight="798" minWidth="1398" maxWidth="1398"/>
+                </ScrollPane>
+            </VBox>
+        </HBox>
+    </VBox>
+</HBox>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<?import javafx.geometry.Insets?>
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.userInterface.PaymentsController"
+      stylesheets="/styles/userInterfaceStyle.css" styleClass="h-box">
+    <VBox prefWidth="302">
+        <StackPane alignment="TOP_LEFT" maxHeight="200">
+            <Label text="Universal" styleClass="label-title-dark">
+                <StackPane.margin>
+                    <Insets top="20" left="20"/>
+                </StackPane.margin>
+            </Label>
+            <HBox alignment="BOTTOM_LEFT">
+                <Label text="BANK" styleClass="label-title-dark">
+                    <HBox.margin>
+                        <Insets top="70" left="20"/>
+                    </HBox.margin>
+                </Label>
+                <Label text="ing" styleClass="label-title"/>
+            </HBox>
+        </StackPane>
+        <Pane minHeight="50"/>
+        <StackPane alignment="CENTER_LEFT">
+            <ImageView fx:id="imageMenuMain" fitHeight="34" fitWidth="34">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button text="Главная" alignment="CENTER_LEFT" prefHeight="100" prefWidth="302" styleClass="menu-button" onAction="#goToMain">
+            </Button>
+        </StackPane>
+        <StackPane alignment="CENTER_LEFT">
+            <ImageView fx:id="imageMenuTransfers" fitHeight="34" fitWidth="34">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button text="Переводы" alignment="CENTER_LEFT" prefHeight="100" prefWidth="302" styleClass="menu-button" onAction="#goToTransfers"/>
+        </StackPane>
+        <StackPane alignment="CENTER_LEFT">
+            <ImageView fx:id="imageMenuPayments" fitHeight="34" fitWidth="34">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button text="Платежи" alignment="CENTER_LEFT" prefHeight="100" prefWidth="302" styleClass="active-menu-button" disable="true"/>
+        </StackPane>
+        <StackPane alignment="CENTER_LEFT">
+            <ImageView fx:id="imageMenuHistory" fitHeight="34" fitWidth="34">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button text="История" alignment="CENTER_LEFT" prefHeight="100" prefWidth="302" styleClass="menu-button" onAction="#goToHistory"/>
+        </StackPane>
+        <Pane fx:id="pane" minHeight="320"/>
+        <StackPane fx:id="spAdmin" alignment="CENTER_LEFT" visible="false">
+            <ImageView fx:id="imageAdminIcon" fitHeight="45" fitWidth="45">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button fx:id="btnAdmin" text="Управление" alignment="CENTER_LEFT" prefHeight="70" prefWidth="302" styleClass="menu-button" onAction="#goToAdmin"/>
+        </StackPane>
+        <StackPane alignment="CENTER_LEFT">
+            <ImageView fx:id="imageExitIcon" fitHeight="45" fitWidth="45">
+                <StackPane.margin>
+                    <Insets left="20"/>
+                </StackPane.margin>
+            </ImageView>
+            <Button fx:id="btnExit" text="Выход" alignment="CENTER_LEFT" prefHeight="70" prefWidth="302" styleClass="menu-button" onAction="#exit"/>
+        </StackPane>
+    </VBox>
+    <VBox alignment="TOP_RIGHT">
+        <HBox alignment="CENTER_RIGHT" minHeight="100" maxHeight="100" prefWidth="1618">
+            <ImageView fx:id="imageUserIcon" fitHeight="80" fitWidth="80" onMousePressed="#openUserMenu">
+                <HBox.margin>
+                    <Insets top="30" right="20"/>
+                </HBox.margin>
+            </ImageView>
+        </HBox>
+        <HBox minHeight="980" maxHeight="980" minWidth="1580" maxWidth="1580">
+            <VBox alignment="TOP_CENTER" minHeight="880" maxHeight="880" minWidth="1000" maxWidth="1000" styleClass="v-box">
+                <HBox.margin>
+                    <Insets left="210"/>
+                </HBox.margin>
+                <Label text="Произвольный платеж">
+                    <VBox.margin>
+                        <Insets bottom="25" top="10"/>
+                    </VBox.margin>
+                </Label>
+                <HBox>
+                    <VBox alignment="TOP_CENTER" minHeight="770" maxHeight="770" minWidth="460" maxWidth="460">
+                        <HBox.margin>
+                            <Insets left="20" right="20"/>
+                        </HBox.margin>
+                        <VBox fx:id="vbSenderCard" minHeight="200" maxHeight="200" minWidth="358" maxWidth="358" styleClass="v-box" onMousePressed="#chooseSenderCard">
+                            <VBox.margin>
+                                <Insets top="20"/>
+                            </VBox.margin>
+                            <ImageView fx:id="imagePlusSenderCard" fitHeight="55" fitWidth="55">
+                                <VBox.margin>
+                                    <Insets top="72" left="151"/>
+                                </VBox.margin>
+                            </ImageView>
+                        </VBox>
+                        <HBox alignment="CENTER" maxWidth="358" styleClass="h-box-field">
+                            <VBox.margin>
+                                <Insets top="20"/>
+                            </VBox.margin>
+                            <TextField fx:id="tfSenderCardSecurityCode" promptText="Код безопасности" prefHeight="30" minWidth="358"/>
+                        </HBox>
+                    </VBox>
+                    <VBox alignment="TOP_CENTER" minHeight="770" maxHeight="770" minWidth="460" maxWidth="460">
+                        <HBox.margin>
+                            <Insets left="20"/>
+                        </HBox.margin>
+                        <HBox alignment="CENTER" maxWidth="358" styleClass="h-box-field">
+                            <VBox.margin>
+                                <Insets top="20"/>
+                            </VBox.margin>
+                            <TextField fx:id="tfRecipient" promptText="Получатель" prefHeight="30" minWidth="358"/>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="358" styleClass="h-box-field">
+                            <VBox.margin>
+                                <Insets top="20"/>
+                            </VBox.margin>
+                            <TextField fx:id="tfRecipientAccount" promptText="Счет получателя" prefHeight="30" minWidth="358"/>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="358" styleClass="h-box-field">
+                            <VBox.margin>
+                                <Insets top="20"/>
+                            </VBox.margin>
+                            <TextField fx:id="tfRecipientBIC" promptText="BIC банка получателя" prefHeight="30" minWidth="358"/>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="358" styleClass="h-box-field">
+                            <VBox.margin>
+                                <Insets top="20"/>
+                            </VBox.margin>
+                            <TextField fx:id="tfRecipientUNP" promptText="УНП получателя" prefHeight="30" minWidth="358"/>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="358" styleClass="h-box-field">
+                            <VBox.margin>
+                                <Insets top="50"/>
+                            </VBox.margin>
+                            <TextField fx:id="tfSenderName" promptText="ФИО отправителя" prefHeight="30" minWidth="358"/>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="358" styleClass="h-box-field">
+                            <VBox.margin>
+                                <Insets top="20"/>
+                            </VBox.margin>
+                            <TextField fx:id="tfSenderAddress" promptText="Адрес отправителя" prefHeight="30" minWidth="358"/>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="358" styleClass="h-box-field">
+                            <VBox.margin>
+                                <Insets top="50"/>
+                            </VBox.margin>
+                            <TextField fx:id="tfPaymentName" promptText="Назначение платежа" prefHeight="30" minWidth="358"/>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="358" styleClass="h-box-field">
+                            <VBox.margin>
+                                <Insets top="20"/>
+                            </VBox.margin>
+                            <TextField fx:id="tfPaymentSum" promptText="Сумма платежа" prefHeight="30" minWidth="358"/>
+                        </HBox>
+                        <Button text="Оплатить" textAlignment="CENTER" alignment="CENTER" minHeight="30" prefWidth="380" onAction="#pay">
+                            <VBox.margin>
+                                <Insets top="180"/>
+                            </VBox.margin>
+                        </Button>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </HBox>
+    </VBox>
+</HBox>

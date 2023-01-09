@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.filters.HistoryFiltersController"
+      stylesheets="/styles/popUpWindow.css" styleClass="v-box-background"
+      alignment="TOP_CENTER">
+    <Label text="Сумма операции" styleClass="label-text">
+        <VBox.margin>
+            <Insets top="20"/>
+        </VBox.margin>
+    </Label>
+    <HBox alignment="CENTER">
+        <VBox.margin>
+            <Insets top="20"/>
+        </VBox.margin>
+        <HBox alignment="TOP_CENTER" maxHeight="30" maxWidth="100" styleClass="h-box">
+            <TextField fx:id="tfMinSum" alignment="CENTER" promptText="От" maxHeight="30" minWidth="100" maxWidth="100"/>
+        </HBox>
+        <Label text="-" alignment="CENTER" minWidth="40" prefWidth="40" styleClass="label-text"/>
+        <HBox alignment="CENTER" maxHeight="30" maxWidth="100" styleClass="h-box">
+            <TextField fx:id="tfMaxSum" alignment="CENTER" promptText="до" maxHeight="30" minWidth="100" maxWidth="100"/>
+        </HBox>
+    </HBox>
+    <Label text="Период совершения" styleClass="label-text">
+        <VBox.margin>
+            <Insets top="20"/>
+        </VBox.margin>
+    </Label>
+    <ComboBox fx:id="cmPeriod" minHeight="35" maxHeight="35" minWidth="240" maxWidth="240" styleClass="h-box"/>
+    <HBox alignment="TOP_CENTER">
+        <Button text="Отмена" prefHeight="40" prefWidth="140" onAction="#cancel">
+            <HBox.margin>
+                <Insets top="20" bottom="15" left="10"/>
+            </HBox.margin>
+        </Button>
+        <Button text="Принять" prefHeight="40" prefWidth="140" onAction="#apply">
+            <HBox.margin>
+                <Insets top="20" bottom="15" left="40" right="10"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+</VBox>

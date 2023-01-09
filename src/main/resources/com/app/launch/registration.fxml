@@ -1,0 +1,95 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.launch.RegistrationController"
+      stylesheets="/styles/launchStyle.css" styleClass="v-box">
+    <HBox alignment="CENTER" prefHeight="400">
+        <Label text="Universal" styleClass="label-title-1">
+            <HBox.margin>
+                <Insets top="200"/>
+            </HBox.margin>
+        </Label>
+        <Label text="BANK" styleClass="label-title-1" style="-fx-text-fill: #5c30cc">
+            <HBox.margin>
+                <Insets top="200"/>
+            </HBox.margin>
+        </Label>
+        <Label text="ing" styleClass="label-title-1">
+            <HBox.margin>
+                <Insets top="200"/>
+            </HBox.margin>
+        </Label>
+    </HBox>
+    <StackPane prefHeight="575">
+        <VBox fx:id="vboxRegistration" alignment="TOP_CENTER">
+            <Label fx:id="lblTitleRegistration" text="Регистрация" styleClass="label-title-2"/>
+            <VBox fx:id="vboxRegistrationPartOne" alignment="TOP_CENTER">
+                <Label text="Личная информация" styleClass="label-title-3"/>
+                <Pane minHeight="20"/>
+                <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+                    <TextField fx:id="tfNewUserSurname" promptText="Фамилия" prefHeight="30" prefWidth="380"/>
+                </HBox>
+                <Label fx:id="lblIncorrectSurname" alignment="BOTTOM_RIGHT" prefWidth="340" style="-fx-text-fill: red" visible="false"/>
+                <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+                    <TextField fx:id="tfNewUserName" promptText="Имя" prefHeight="30" prefWidth="380"/>
+                </HBox>
+                <Label fx:id="lblIncorrectName" alignment="BOTTOM_RIGHT" prefWidth="340" style="-fx-text-fill: red" visible="false"/>
+                <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+                    <TextField fx:id="tfNewUserSecondName" promptText="Отчество" prefHeight="30" prefWidth="380"/>
+                </HBox>
+                <Label fx:id="lblIncorrectSecondName" alignment="BOTTOM_RIGHT" prefWidth="340" style="-fx-text-fill: red" visible="false"/>
+                <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+                    <TextField fx:id="tfNewUserDateOfBirth" promptText="Дата рождения" prefHeight="30" prefWidth="380"/>
+                </HBox>
+                <Label fx:id="lblIncorrectDateOfBirth" alignment="BOTTOM_RIGHT" prefWidth="340" style="-fx-text-fill: red" visible="false"/>
+                <Pane minHeight="20"/>
+                <HBox maxWidth="380">
+                    <Button text="Отмена" textAlignment="CENTER" minHeight="30" prefWidth="120" onAction="#cancelRegistration"/>
+                    <Button text="Далее" textAlignment="CENTER" minHeight="30" prefWidth="120" onAction="#goToRegistrationPartTwo">
+                        <HBox.margin>
+                            <Insets left="140"/>
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+            </VBox>
+            <VBox fx:id="vboxRegistrationPartTwo" alignment="TOP_CENTER">
+                <Label text="Данные аккаунта" styleClass="label-title-3"/>
+                <Pane minHeight="20"/>
+                <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+                    <TextField fx:id="tfNewUserLogin" promptText="Логин" prefHeight="30" prefWidth="380"/>
+                </HBox>
+                <Label fx:id="lblIncorrectNewLogin" alignment="BOTTOM_RIGHT" prefWidth="340" style="-fx-text-fill: red" visible="false"/>
+                <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+                    <PasswordField fx:id="pfNewUserPassword" promptText="Пароль" prefHeight="30" prefWidth="380"/>
+                </HBox>
+                <Label fx:id="lblIncorrectNewPassword" alignment="BOTTOM_RIGHT" prefWidth="340" style="-fx-text-fill: red" visible="false"/>
+                <Pane minHeight="144"/>
+                <HBox maxWidth="380">
+                    <Button text="Назад" textAlignment="CENTER" minHeight="30" prefWidth="120" onAction="#goToRegistrationPartOne"/>
+                    <Button text="Завершить" textAlignment="CENTER" minHeight="30" prefWidth="120" onAction="#registerCheck">
+                        <HBox.margin>
+                            <Insets left="140"/>
+                        </HBox.margin>
+                    </Button>
+                </HBox>
+            </VBox>
+        </VBox>
+    </StackPane>
+    <HBox alignment="BOTTOM_LEFT" maxHeight="105">
+        <StackPane>
+            <Pane prefHeight="70" prefWidth="70" style="-fx-background-color: transparent" onMousePressed="#exit">
+                <StackPane.margin>
+                    <Insets bottom="35" left="35"/>
+                </StackPane.margin>
+            </Pane>
+            <ImageView fx:id="imageExitIcon" fitHeight="70" fitWidth="70" onMousePressed="#exit">
+                <StackPane.margin>
+                    <Insets bottom="35" left="35"/>
+                </StackPane.margin>
+            </ImageView>
+        </StackPane>
+    </HBox>
+</VBox>

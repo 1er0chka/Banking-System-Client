@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.controller.user.EditUserController"
+      stylesheets="/styles/popUpWindow.css" styleClass="v-box-background" alignment="CENTER">
+    <Label text="Пользователь" styleClass="label-header">
+        <VBox.margin>
+            <Insets top="20" bottom="12"/>
+        </VBox.margin>
+    </Label>
+    <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+        <TextField fx:id="tfSurname" promptText="Фамилия" prefHeight="30" prefWidth="380"/>
+    </HBox>
+    <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+        <VBox.margin>
+            <Insets top="10" bottom="10"/>
+        </VBox.margin>
+        <TextField fx:id="tfName" promptText="Имя" prefHeight="30" prefWidth="380"/>
+    </HBox>
+    <HBox alignment="CENTER" maxWidth="380" styleClass="h-box">
+        <VBox.margin>
+            <Insets bottom="10"/>
+        </VBox.margin>
+        <TextField fx:id="tfSecondName" promptText="Отчество" prefHeight="30" prefWidth="380"/>
+    </HBox>
+    <ComboBox fx:id="cbRole" minHeight="35" maxHeight="35" minWidth="240" maxWidth="240" styleClass="h-box"/>
+    <HBox>
+        <Button text="Отмена" prefHeight="40" prefWidth="140" onAction="#cancel">
+            <HBox.margin>
+                <Insets top="20" bottom="15" left="10"/>
+            </HBox.margin>
+        </Button>
+        <Button text="Сохранить" prefHeight="40" prefWidth="140" onAction="#edit">
+            <HBox.margin>
+                <Insets top="20" bottom="15" left="95"/>
+            </HBox.margin>
+        </Button>
+    </HBox>
+</VBox>

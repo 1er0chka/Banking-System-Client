@@ -1,0 +1,30 @@
+.v-box {
+    -fx-background-color: #f1eefc;
+    -fx-border-width: 3px, 3px, 3px, 3px;
+    -fx-border-color: #b7b8ff;
+}
+
+.label {
+    -fx-text-fill: #724cd5;
+    -fx-font-size: 24;
+}
+.label-header {
+    -fx-text-fill: #5c30cc;
+    -fx-font-size: 24;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #f1eefc, #cecfff);
+    -fx-text-fill: #5c30cc;
+    -fx-border-color: #b7b8ff;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-font-size: 16;
+}
+.button:pressed, .button:default:hover:pressed {
+    -fx-background-color: linear-gradient(to bottom, #d9d8e2, #bdbee5);
+    -fx-text-fill: #613dbc;
+    -fx-border-color: #abace5;
+    -fx-font-size: 16;
+}

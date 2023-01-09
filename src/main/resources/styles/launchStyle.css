@@ -1,0 +1,65 @@
+.v-box {
+    -fx-background-image: url('../images/backgrounds/launchWindow.png');
+}
+
+.label {
+    -fx-text-fill: #f1eefc;
+    -fx-font-size: 16;
+}
+.label-title-1 {
+    -fx-text-fill: #f1eefc;
+    -fx-font-size: 100;
+}
+.label-title-2 {
+    -fx-text-fill: #f1eefc;
+    -fx-font-size: 58;
+}
+.label-title-3 {
+    -fx-text-fill: #f1eefc;
+    -fx-font-size: 28;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #f1eefc, #cecfff);
+    -fx-text-fill: #5c30cc;
+    -fx-border-color: #b7b8ff;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-font-size: 16;
+}
+.button:pressed, .button:default:hover:pressed {
+    -fx-background-color: linear-gradient(to bottom, #d9d8e2, #bdbee5);
+    -fx-text-fill: #613dbc;
+    -fx-border-color: #abace5;
+    -fx-font-size: 16;
+}
+
+.h-box {
+    -fx-border-color: #b7b8ff;
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 5;
+    -fx-background-color: #fdfdff;
+    -fx-background-radius: 5;
+}
+.h-box-error {
+    -fx-border-color: red;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 5;
+    -fx-background-color: #fdfdff;
+    -fx-background-radius: 5;
+}
+
+.text-field {
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-background-color: transparent;
+    -fx-background-radius: 5;
+    -fx-font-size: 16;
+}
+
+.password-field {
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-background-color: transparent;
+    -fx-background-radius: 5;
+    -fx-font-size: 16;
+}
